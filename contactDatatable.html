@@ -1,0 +1,36 @@
+<template>
+   
+        <lightning-card title="Edit and display contacts">
+            
+                <lightning-datatable key-field="Id" 
+                                     data={data} 
+                                     columns={columns} 
+                                     onsave={handleSave}
+                                     draft-values={saveDraftValues} 
+                                     default-sort-direction={defaultSortDirection} 
+                                     sorted-direction={sortDirection} 
+                                     sorted-by={sortedBy}
+                                     onsort={onHandleSort}
+                                     hide-checkbox-column 
+                                     show-row-number-column>
+                </lightning-datatable>
+            </br>
+            <lightning-layout horizontal-align="space">
+                <lightning-layout-item flexibility="auto">
+                    <lightning-button label="Previous" icon-name="utility:chevronleft" onclick={previousHandler}>
+                    </lightning-button>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto">
+                    Page {page} of {totalPage}
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto">
+                    <lightning-button label="Next" icon-name="utility:chevronright" icon-position="right"
+                        onclick={nextHandler}></lightning-button>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
+
+
+
+    
+</template>
